@@ -1,0 +1,3 @@
+#/bin/sh
+git clone https://${username}:${password}@${uri} /var/www --single-branch --no-tags --no-hardlinks
+/usr/sbin/apache2ctl -D FOREGROUND > /dev/stdout
