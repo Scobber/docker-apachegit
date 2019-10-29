@@ -13,6 +13,8 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 COPY apache2.conf /etc/apache2/apache2.conf
+COPY launch /bin/launch
+run chmod +x /bin/launch
 # Expose apache.
 EXPOSE 80
-CMD /usr/sbin/apache2ctl -D FOREGROUND > /dev/stdout
+CMD /bin/launch
