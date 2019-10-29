@@ -1,3 +1,4 @@
 #/bin/sh
-git clone https://${GIT_USER}:${GIT_PASSWORD}@${GIT_URI} /var/www --single-branch --no-tags --no-hardlinks --separate-git-dir /var/wwwgit
+rm -R /var/www/html
+git clone https://${GIT_USER}:${GIT_PASSWORD}@${GIT_URI} /var/www/html --single-branch --no-tags --no-hardlinks --separate-git-dir /var/wwwgit
 /usr/sbin/apache2ctl -D FOREGROUND > /dev/stdout
