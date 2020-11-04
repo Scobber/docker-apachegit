@@ -1,5 +1,5 @@
 # docker-apachegit
-Apache Server - Clones codebase from GIT
+Apache Server - Clones Web Application from git
 
 This will only clone from a https repo.
 With this container, you are able to deploy a Apache2/PHP7.4 docker service.
