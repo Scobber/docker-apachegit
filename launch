@@ -1,7 +1,6 @@
 #/bin/sh
 rm -R /var/www/html
-git clone https://${GIT_USER}:${GIT_PASSWORD}@${GIT_URI} /var/www/html --single-branch --no-tags --no-hardlinks --separate-git-dir /var/www/git
 if [ -z ${GIT_BRANCH+x} ]; then GIT_BRANCH="master"; fi
 if [ -z "$GIT_BRANCH" ]; then GIT_BRANCH="master"; fi
-git --git-dir=/var/www/git --work-tree=/var/www/html checkout ${GIT_BRANCH} 
+git clone https://${GIT_USER}:${GIT_PASSWORD}@${GIT_URI} /var/www/html --single-branch -b ${GIT_BRANCH} --no-tags --no-hardlinks --separate-git-dir /var/www/git
 /usr/sbin/apache2ctl -D FOREGROUND > /dev/stdout
